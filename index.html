@@ -1,0 +1,71 @@
+
+<script type="text/javascript">
+  var adjArray = ["a dick", "creative", "large", "sassy", "friendly", "productive", "taint jesus", "cooperative", "poo brown"];
+
+var i = 0;
+
+function chooseWord() {
+  
+  if (i >= adjArray.length) {
+    i = 0;
+  }
+
+  var newWord = adjArray[i];
+  i++;
+  
+  return newWord;
+}
+  
+function wordSwap(word) {
+  	$("#adj").text(word);
+}
+
+$(function() {  
+	setInterval(function() { 
+    $("#adj").text(chooseWord()) 
+  }, 3000);
+});
+</script>
+
+
+<div>
+  <h1>Emerson Dowd is&#8230; <span id="adj" class="animated"></span></h1>
+</div>
+
+<style>body {
+  font-family: 'PT Sans Narrow', sans-serif;
+  font-weight:700;
+  background-color:#FF4081;
+  font-smooth:auto;
+}
+
+div {
+  margin: auto;
+  position: absolute;
+  top: 0; left: 0; bottom: 0; right: 0;
+  height:80px;
+  transition:all 1s ease;
+  transform: translateZ(0);
+  width:600px;
+}
+
+h1 {
+  text-align:left;
+  font-size:3em;
+  transition:all 1s ease;
+  color:#ffffff;
+  margin-top:0;
+}
+
+span {
+  position:relative;
+  display:inline-block;
+  animation:fadeInOut 3s ease-in-out infinite;
+}
+
+@keyframes fadeInOut {
+  0% {opacity:0; top:20px;}
+  40% {opacity:1; top:0px;}
+  70% {opacity:1; top:0px;}
+  100% {opacity:0; top:-20px;}
+}</style>
